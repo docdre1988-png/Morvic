@@ -6,6 +6,10 @@ import type { Catalog, CartItem, Product } from './types';
 import { lineKey, MAX_QUANTITY, money, normalizeCart, subtotal, whatsappLink } from './cart';
 import { Dialog, Icon, ProductImage } from './components';
 
+const needsInquiry = (product: Product) => product.sizes.length === 0;
+const productPrice = (product: Product) => needsInquiry(product) ? 'Consultar precio' : money(product.price);
+const inquiryUrl = (product: Product) => `https://wa.me/${store.whatsapp}?text=${encodeURIComponent(`¡Hola, ${store.name}! Quiero consultar precio, tallas y disponibilidad de ${product.name}. Código: ${product.id}`)}`;
+
 const storageKey = `${store.id}:cart:v1`;
 const normalizeText = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 function readCart(): unknown { try { return JSON.parse(localStorage.getItem(storageKey) ?? '[]'); } catch { return []; } }
@@ -13,9 +17,9 @@ function readCart(): unknown { try { return JSON.parse(localStorage.getItem(stor
 function ProductDetail({ product, onAdd }: { product: Product; onAdd: (p: Product, size: string) => void }) {
   const [size, setSize] = useState(product.sizes[0] ?? '');
   return <div className="product-detail"><div className="detail-image"><ProductImage src={product.image} alt={`Imagen de ${product.name}`} /></div><div className="detail-copy">
-    <span className="eyebrow">DESCUBRE TU PRÓXIMO FAVORITO</span><h2>{product.name}</h2><p className="detail-price">{money(product.price)}</p><p>{product.description}</p><p className="selected-color"><span className="swatch" style={{background:colorHex(product.color)}}/><strong>Color:</strong> {product.color || 'Por confirmar'}</p>
-    <fieldset className="size-picker"><legend>Elige una talla</legend>{product.sizes.map(s => <button key={s} className={s === size ? 'selected' : ''} aria-pressed={s === size} onClick={() => setSize(s)}>{s}</button>)}</fieldset>
-    <button className="button primary full" disabled={!product.available || !size} onClick={() => onAdd(product, size)}><Icon name="bag" />{product.available ? 'Agregar a mi bolsa' : 'No disponible'}</button>
+    <span className="eyebrow">DESCUBRE TU PRÓXIMO FAVORITO</span><h2>{product.name}</h2><p className="detail-price">{productPrice(product)}</p><p>{product.description}</p><p className="selected-color"><span className="swatch" style={{background:colorHex(product.color)}}/><strong>Color:</strong> {product.color || 'Por confirmar'}</p>
+    {!needsInquiry(product) && <fieldset className="size-picker"><legend>Elige una talla</legend>{product.sizes.map(s => <button key={s} className={s === size ? 'selected' : ''} aria-pressed={s === size} onClick={() => setSize(s)}>{s}</button>)}</fieldset>}
+    <>{needsInquiry(product) ? <a className="button primary full" href={inquiryUrl(product)} target="_blank" rel="noopener noreferrer"><Icon name="chat"/>Consultar precio y tallas</a> : <button className="button primary full" disabled={!product.available || !size} onClick={() => onAdd(product, size)}><Icon name="bag" />{product.available ? 'Agregar a mi bolsa' : 'No disponible'}</button>}</>
     <p className="small muted">La disponibilidad y la entrega se confirman por WhatsApp.</p>
     {product.demo && <p className="demo-inline">Producto, imagen y precio de demostración.</p>}
   </div></div>;
@@ -94,7 +98,7 @@ export default function App() {
         {error ? <div className="empty-state" role="alert"><Icon name="leaf" size={40}/><h3>No pudimos abrir la colección</h3><p>Revisa tu conexión y vuelve a intentarlo.</p><button className="button primary" onClick={() => setAttempt(a => a + 1)}>Intentar de nuevo</button></div> : !catalog ? <div className="product-grid" aria-label="Cargando productos" aria-busy="true">{Array.from({ length: 6 }, (_, i) => <div key={i} className="skeleton"/>)}</div> : !filtered.length ? <div className="empty-state"><Icon name="search" size={40}/><h3>{products.length ? 'Aún no encontramos ese producto' : 'TU PRÓXIMO EQUIPO ESTÁ EN CAMINO'}</h3><p>{products.length ? 'Prueba con otro nombre o explora toda la colección.' : 'Estamos preparando el catálogo MORVIC SPORT. Pronto podrás descubrir nuestros productos aquí.'}</p>{products.length > 0 && <button className="button secondary" onClick={() => { setSearch(''); setCategory('all'); }}>Ver toda la colección</button>}</div> : <div className="product-grid">{filtered.map(p => <article key={p.id} className="product-card">
           <button className="product-photo" aria-label={`Ver ${p.name}`} onClick={() => setSelected(p)}><ProductImage src={p.image} alt={`Imagen de ${p.name}, color ${p.color}`} />{(!p.available || p.badge) && <span className={`product-badge ${!p.available ? 'sold-out' : ''}`}>{!p.available ? 'No disponible' : p.badge}</span>}<span className="quick-view">Ver producto</span></button>
           <div className="product-meta"><span>{categories.find(c => c.id === p.categoryId)?.name} <span aria-hidden="true">/</span> {p.color}</span><span className="swatch" style={{ background: colorHex(p.color) }}/></div>
-          <div className="product-title-row"><h3><button onClick={() => setSelected(p)}>{p.name}</button></h3><span className="price">{money(p.price)}</span></div><div className="card-bottom"><span>{p.sizes[0]} – {p.sizes.at(-1)}</span><button className="add-button" disabled={!p.available} onClick={() => setSelected(p)} aria-label={`Elegir talla de ${p.name}`}><Icon name="bag" size={18}/><span>Elegir</span></button></div>
+          <div className="product-title-row"><h3><button onClick={() => setSelected(p)}>{p.name}</button></h3><span className="price">{productPrice(p)}</span></div><div className="card-bottom"><span>{needsInquiry(p) ? 'Tallas por confirmar' : `${p.sizes[0]} – ${p.sizes.at(-1)}`}</span><button className="add-button" disabled={!p.available} onClick={() => setSelected(p)} aria-label={`Elegir talla de ${p.name}`}><Icon name="bag" size={18}/><span>{needsInquiry(p) ? 'Consultar' : 'Elegir'}</span></button></div>
         </article>)}</div>}
       </section>
 

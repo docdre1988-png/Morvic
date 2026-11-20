@@ -6,5 +6,5 @@ export const store = {
   hero: { image: '', eyebrow: 'EL MOVIMIENTO ES TUYO', title: 'SUPERA', titleAccent: 'TUS LÍMITES.', subtitle: 'Tu pasión no se detiene. Encuentra tu próximo equipo y lleva el deporte contigo.' },
   about: 'En MORVIC SPORT compartimos tu pasión por el deporte. Queremos acompañarte en cada entrenamiento, cada partido y cada nueva meta con un estilo que se mueve contigo.',
   address: '', hours: '', instagram: '', facebook: '',
-  demo: true,
+  demo: false,
 };

@@ -16,5 +16,84 @@
       "subtitle": "Completa tu equipo"
     }
   ],
-  "products": []
+  "products": [
+    {
+      "id": "adidas-cloudfoam-gris-lima",
+      "name": "Zapatillas Adidas Cloudfoam gris y amarillo",
+      "categoryId": "calzado",
+      "price": 0,
+      "description": "Zapatillas grises con detalles amarillos y negros, malla visible y suela blanca. Consulta el precio, las tallas y la disponibilidad.",
+      "image": "/images/adidas-cloudfoam-gris-lima.webp",
+      "color": "Gris",
+      "sizes": [],
+      "available": true,
+      "visible": true,
+      "demo": false
+    },
+    {
+      "id": "adidas-cloudfoam-gris-blanco",
+      "name": "Zapatillas Adidas Cloudfoam gris y blanco",
+      "categoryId": "calzado",
+      "price": 0,
+      "description": "Zapatillas grises con franjas blancas, paneles de malla y suela blanca con base negra. Consulta el precio, las tallas y la disponibilidad.",
+      "image": "/images/adidas-cloudfoam-gris-blanco.webp",
+      "color": "Gris",
+      "sizes": [],
+      "available": true,
+      "visible": true,
+      "demo": false
+    },
+    {
+      "id": "nike-crema-burdeos",
+      "name": "Zapatillas Nike crema y burdeos",
+      "categoryId": "calzado",
+      "price": 0,
+      "description": "Zapatillas en tonos crema y blanco con detalles burdeos y suela de contraste. Consulta el precio, las tallas y la disponibilidad.",
+      "image": "/images/nike-crema-burdeos.webp",
+      "color": "Crema",
+      "sizes": [],
+      "available": true,
+      "visible": true,
+      "demo": false
+    },
+    {
+      "id": "nike-plata-negro",
+      "name": "Zapatillas Nike plata y negro",
+      "categoryId": "calzado",
+      "price": 0,
+      "description": "Zapatillas blancas con paneles plateados, detalles negros y suela de contraste. Consulta el precio, las tallas y la disponibilidad.",
+      "image": "/images/nike-plata-negro.webp",
+      "color": "Gris",
+      "sizes": [],
+      "available": true,
+      "visible": true,
+      "demo": false
+    },
+    {
+      "id": "nike-blanco-gris",
+      "name": "Zapatillas Nike blanco y gris",
+      "categoryId": "calzado",
+      "price": 0,
+      "description": "Zapatillas en blanco y gris con paneles de malla y suela de diseño segmentado. Consulta el precio, las tallas y la disponibilidad.",
+      "image": "/images/nike-blanco-gris.webp",
+      "color": "Blanco",
+      "sizes": [],
+      "available": true,
+      "visible": true,
+      "demo": false
+    },
+    {
+      "id": "nike-blanco-negro",
+      "name": "Zapatillas Nike blanco y negro",
+      "categoryId": "calzado",
+      "price": 0,
+      "description": "Zapatillas blancas con detalle lateral negro y suela de relieve ondulado. Consulta el precio, las tallas y la disponibilidad.",
+      "image": "/images/nike-blanco-negro.webp",
+      "color": "Blanco",
+      "sizes": [],
+      "available": true,
+      "visible": true,
+      "demo": false
+    }
+  ]
 }
