@@ -4,7 +4,7 @@ Plantilla React + TypeScript + Vite. Instalación independiente por negocio, sin
 
 ## Estado por etapas
 
-- 1 y 2: negocio e identidad aprobados (Nido Mini, ropa infantil, WhatsApp 51907279299).
+- 1 y 2: negocio e identidad aprobados (Nido Mini, ropa general, WhatsApp 51907279299).
 - 3: catálogo público, búsqueda, categorías, tallas, bolsa persistente y enlace de pedido por WhatsApp.
 - 4: panel `/admin`, sesión firmada HttpOnly de ocho horas, credenciales en servidor, CRUD y subida de imágenes. [Configuración y uso](docs/ADMINISTRACION.md).
 - Supabase conectado localmente: tablas y bucket comprobados, acceso administrativo verificado. CRUD completo y fotografías pendientes de comprobación en el dominio final.
@@ -45,3 +45,7 @@ Foto hero: [Cute Kid Wearing Beige Sweater · Pexels](https://www.pexels.com/pho
 Tipografías: DM Sans y Manrope desde Google Fonts; fallback sans-serif si no hay conexión. Logo e ilustraciones creados para esta plantilla. `node scripts/create-demo-assets.mjs` regenera únicamente las ilustraciones demo.
 
 Al solicitar **NUEVA TIENDA**, conservar el software y comenzar el descubrimiento del nuevo negocio por etapas.
+
+## Adaptación a ropa general
+
+Categorías Mujer, Hombre y Unisex, tres prendas demo e imágenes referenciales generadas con IA. Se conserva la identidad y las funciones existentes. [Recursos y briefs](docs/IMAGENES-MODA.md). El producto existente en Supabase se conservó al añadir las referencias.
