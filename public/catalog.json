@@ -1,0 +1,15 @@
+{
+  "categories": [
+    { "id": "bebes", "name": "Bebés", "subtitle": "Sus primeras aventuras" },
+    { "id": "ninas", "name": "Niñas", "subtitle": "Un mundo por descubrir" },
+    { "id": "ninos", "name": "Niños", "subtitle": "Listos para explorar" }
+  ],
+  "products": [
+    { "id": "p1", "name": "Conjunto Nube", "categoryId": "bebes", "price": 69, "description": "Un conjunto de dos piezas en tono avena, pensado para los primeros descubrimientos. Producto de demostración: material, medidas y stock por confirmar.", "image": "/images/conjunto.svg", "color": "Avena", "sizes": ["0–3 meses", "3–6 meses", "6–12 meses"], "available": true, "visible": true, "badge": "Favorito", "demo": true },
+    { "id": "p2", "name": "Vestido Margarita", "categoryId": "ninas", "price": 79, "description": "Silueta amplia, pequeños detalles y un cálido tono terracota para días especiales. Producto de demostración: material, medidas y stock por confirmar.", "image": "/images/vestido.svg", "color": "Terracota", "sizes": ["2 años", "4 años", "6 años"], "available": true, "visible": true, "badge": "Nuevo", "demo": true },
+    { "id": "p3", "name": "Overol Explorador", "categoryId": "ninos", "price": 89, "description": "Un overol verde salvia con bolsillo al frente, para imaginar mil aventuras. Producto de demostración: material, medidas y stock por confirmar.", "image": "/images/overol.svg", "color": "Salvia", "sizes": ["2 años", "4 años", "6 años"], "available": true, "visible": true, "demo": true },
+    { "id": "p4", "name": "Chompa Abrazo", "categoryId": "bebes", "price": 65, "description": "Una chompa de apariencia tejida en un suave tono crema. Producto de demostración: material, medidas y stock por confirmar.", "image": "/images/chompa.svg", "color": "Crema", "sizes": ["6–12 meses", "12–18 meses", "18–24 meses"], "available": true, "visible": true, "demo": true },
+    { "id": "p5", "name": "Blusa Jardín", "categoryId": "ninas", "price": 49, "description": "Una blusa rosa empolvado de corte sencillo para combinar a su manera. Producto de demostración: material, medidas y stock por confirmar.", "image": "/images/blusa.svg", "color": "Rosa", "sizes": ["2 años", "4 años", "6 años"], "available": true, "visible": true, "demo": true },
+    { "id": "p6", "name": "Polo Pequeño Sol", "categoryId": "ninos", "price": 39, "description": "Un polo color miel con un pequeño sol bordado como inspiración. Producto de demostración: material, medidas y stock por confirmar.", "image": "/images/polo.svg", "color": "Miel", "sizes": ["2 años", "4 años", "6 años", "8 años"], "available": false, "visible": true, "demo": true }
+  ]
+}
