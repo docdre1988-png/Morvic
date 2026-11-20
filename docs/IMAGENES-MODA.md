@@ -12,3 +12,13 @@ Archivos finales en `public/images/`:
 Estos briefs resumen el conjunto de prompts usado. Las imágenes infantiles anteriores se conservan en el historial y los archivos, pero ya no se referencian desde el catálogo ni el hero.
 
 `node --env-file=.env scripts/seed-demo.mjs` añade las tres prendas demo a Supabase sin borrar ni editar registros existentes. Evita duplicados por ruta de imagen y condición demo.
+
+## Cuatro referencias adicionales — ALMA Estudio
+
+Generadas con image_gen integrado. Archivos en `public/images/`: `vestido-arena.png`, `polo-negro.png`, `jean-azul.png` y `chompa-crema.png`.
+
+Prompt utilizado para cada archivo:
+
+“Use case: product-mockup. Premium ecommerce photograph of a single [SUBJECT] on invisible mannequin, front view, complete garment centered with generous margins. Realistic fabric textures, soft warm gray studio backdrop and subtle grounded shadow, consistent diffuse daylight, portrait 4:5 composition. No people, text, logos or watermark. Referential adult fashion product photograph.”
+
+Subjects, en el mismo orden: “adult women’s sand beige midi dress, short sleeves, belted waist”; “adult unisex black crew neck cotton t-shirt”; “adult straight leg blue denim jeans”; “adult unisex cream knit crewneck sweater”.

@@ -1,10 +1,10 @@
-# Nido Mini · Catálogos Digitales Express
+# ALMA Estudio · Catálogos Digitales Express
 
 Plantilla React + TypeScript + Vite. Instalación independiente por negocio, sin SaaS ni multiempresa.
 
 ## Estado por etapas
 
-- 1 y 2: negocio e identidad aprobados (Nido Mini, ropa general, WhatsApp 51907279299).
+- 1 y 2: negocio e identidad actualizados (ALMA Estudio, ropa general, WhatsApp 51907279299).
 - 3: catálogo público, búsqueda, categorías, tallas, bolsa persistente y enlace de pedido por WhatsApp.
 - 4: panel `/admin`, sesión firmada HttpOnly de ocho horas, credenciales en servidor, CRUD y subida de imágenes. [Configuración y uso](docs/ADMINISTRACION.md).
 - Supabase conectado localmente: tablas y bucket comprobados, acceso administrativo verificado. CRUD completo y fotografías pendientes de comprobación en el dominio final.
@@ -49,3 +49,5 @@ Al solicitar **NUEVA TIENDA**, conservar el software y comenzar el descubrimient
 ## Adaptación a ropa general
 
 Categorías Mujer, Hombre y Unisex, tres prendas demo e imágenes referenciales generadas con IA. Se conserva la identidad y las funciones existentes. [Recursos y briefs](docs/IMAGENES-MODA.md). El producto existente en Supabase se conservó al añadir las referencias.
+
+Nueva identidad ALMA Estudio: logo `public/logo-alma.svg`, aplicado desde `src/store.config.ts`. Cuatro prendas demo adicionales conservando los productos existentes.
