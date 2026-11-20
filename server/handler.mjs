@@ -7,7 +7,7 @@ function validate(kind, raw) {
   const name = text(raw.name); if (!name) throw new Error('El nombre es obligatorio (máximo 200 caracteres).');
   if (kind === 'categories') return { name, subtitle: text(raw.subtitle) };
   if (!Number.isFinite(raw.price) || raw.price < 0 || raw.price > 999999) throw new Error('Precio inválido.');
-  if (!Array.isArray(raw.sizes) || !raw.sizes.length || raw.sizes.length > 30 || raw.sizes.some(s => !text(s, 60))) throw new Error('Indica entre 1 y 30 tallas.');
+  if (!Array.isArray(raw.sizes) || raw.sizes.length > 30 || raw.sizes.some(s => !text(s, 60))) throw new Error('Indica hasta 30 tallas válidas o déjalas vacías para consultas.');
   const image = text(raw.image, 2000); if (image && !image.startsWith('/images/') && !/^https:\/\//.test(image)) throw new Error('Imagen inválida.');
   return { name, price: Math.round(raw.price * 100) / 100, categoryId: text(raw.categoryId), description: text(raw.description, 4000), image, color: text(raw.color), sizes: [...new Set(raw.sizes.map(s => s.trim()))], available: raw.available === true, visible: raw.visible === true, demo: raw.demo === true, badge: text(raw.badge, 40) };
 }

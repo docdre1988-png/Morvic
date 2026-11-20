@@ -42,14 +42,22 @@ export default function App() {
   useEffect(() => {
     const controller = new AbortController();
     setError(false);
-    fetch('/api/admin?action=public', { signal: controller.signal }).then(async response => {
+    const loadCatalog = async () => {
+      try {
+        const response = await fetch('/api/admin?action=public', { signal: controller.signal });
+        if (!response.ok) throw new Error('API no disponible');
+        const data = await response.json();
+        if (!data.demo && Array.isArray(data.products) && Array.isArray(data.categories)) return data as Catalog;
+      } catch (e) {
+        if (controller.signal.aborted) throw e;
+      }
+      const response = await fetch('/catalog.json', { signal: controller.signal });
       if (!response.ok) throw new Error('No se pudo cargar el catálogo');
-      const result = await response.json();
-      return result.demo ? fetch('/catalog.json', { signal: controller.signal }) : new Response(JSON.stringify(result));
-    }).then(async r => {
-      if (!r.ok) throw new Error('No se pudo cargar el catálogo');
-      const data: Catalog = await r.json();
+      const data = await response.json();
       if (!Array.isArray(data.products) || !Array.isArray(data.categories)) throw new Error('Catálogo inválido');
+      return data as Catalog;
+    };
+    loadCatalog().then(data => {
       setCatalog(data);
       setCart(normalizeCart(readCart(), data.products));
     }).catch(e => { if (e.name !== 'AbortError') setError(true); });
