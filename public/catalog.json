@@ -1,152 +1,20 @@
 {
   "categories": [
     {
-      "id": "mujer",
-      "name": "Mujer",
-      "subtitle": "Prendas para tu estilo"
+      "id": "ropa",
+      "name": "Ropa deportiva",
+      "subtitle": "Para moverte a tu ritmo"
     },
     {
-      "id": "hombre",
-      "name": "Hombre",
-      "subtitle": "Esenciales de cada día"
+      "id": "calzado",
+      "name": "Calzado",
+      "subtitle": "Tu siguiente paso"
     },
     {
-      "id": "unisex",
-      "name": "Unisex",
-      "subtitle": "Viste a tu manera"
+      "id": "accesorios",
+      "name": "Accesorios",
+      "subtitle": "Completa tu equipo"
     }
   ],
-  "products": [
-    {
-      "id": "moda-camisa",
-      "name": "Camisa Lino Esencial",
-      "categoryId": "unisex",
-      "price": 89,
-      "description": "Camisa de silueta relajada en tono crema. Imagen referencial generada con IA: material, medidas y disponibilidad por confirmar.",
-      "image": "/images/camisa-lino.png",
-      "color": "Crema",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "available": true,
-      "visible": true,
-      "badge": "Esencial",
-      "demo": true
-    },
-    {
-      "id": "moda-pantalon",
-      "name": "Pantalón Terra",
-      "categoryId": "mujer",
-      "price": 109,
-      "description": "Pantalón de corte amplio en terracota, una propuesta versátil para tus looks diarios. Imagen referencial generada con IA: material, medidas y disponibilidad por confirmar.",
-      "image": "/images/pantalon-terracota.png",
-      "color": "Terracota",
-      "sizes": [
-        "S",
-        "M",
-        "L"
-      ],
-      "available": true,
-      "visible": true,
-      "badge": "Nuevo",
-      "demo": true
-    },
-    {
-      "id": "moda-sobrecamisa",
-      "name": "Sobrecamisa Salvia",
-      "categoryId": "hombre",
-      "price": 129,
-      "description": "Sobrecamisa en verde salvia con bolsillos frontales y corte relajado. Imagen referencial generada con IA: material, medidas y disponibilidad por confirmar.",
-      "image": "/images/sobrecamisa-salvia.png",
-      "color": "Salvia",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "available": true,
-      "visible": true,
-      "demo": true
-    },
-    {
-      "id": "vestido-arena",
-      "name": "Vestido Arena",
-      "categoryId": "mujer",
-      "price": 119,
-      "color": "Beige",
-      "description": "Vestido midi de silueta fluida, manga corta y cinturón para combinar a tu manera. Imagen referencial generada con IA: material, medidas y disponibilidad por confirmar.",
-      "image": "/images/vestido-arena.png",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "available": true,
-      "visible": true,
-      "demo": true,
-      "badge": "Nuevo"
-    },
-    {
-      "id": "polo-negro",
-      "name": "Polo Esencial Negro",
-      "categoryId": "unisex",
-      "price": 49,
-      "color": "Negro",
-      "description": "Polo de cuello redondo y corte relajado, un básico versátil para todos los días. Imagen referencial generada con IA: material, medidas y disponibilidad por confirmar.",
-      "image": "/images/polo-negro.png",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "available": true,
-      "visible": true,
-      "demo": true,
-      "badge": "Esencial"
-    },
-    {
-      "id": "jean-azul",
-      "name": "Jean Azul Recto",
-      "categoryId": "hombre",
-      "price": 139,
-      "color": "Azul",
-      "description": "Jean de corte recto en azul clásico para acompañar tus planes diarios. Imagen referencial generada con IA: material, medidas y disponibilidad por confirmar.",
-      "image": "/images/jean-azul.png",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "available": true,
-      "visible": true,
-      "demo": true,
-      "badge": ""
-    },
-    {
-      "id": "chompa-crema",
-      "name": "Chompa Punto Crema",
-      "categoryId": "unisex",
-      "price": 99,
-      "color": "Crema",
-      "description": "Chompa de apariencia tejida y cuello redondo, en un tono crema fácil de combinar. Imagen referencial generada con IA: material, medidas y disponibilidad por confirmar.",
-      "image": "/images/chompa-crema.png",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
-      ],
-      "available": true,
-      "visible": true,
-      "demo": true,
-      "badge": "Favorito"
-    }
-  ]
+  "products": []
 }
