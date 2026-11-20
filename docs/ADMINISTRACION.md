@@ -3,8 +3,8 @@
 ## Primer acceso
 
 1. Copia `.env.example` a `.env` en tu equipo. Este archivo se ignora en Git.
-2. Configura `ADMIN_USER` y `ADMIN_PASSWORD` con el usuario y la clave que prefieras, sin longitud mínima obligatoria. `SESSION_SECRET` es una clave técnica aleatoria de 32 caracteres o más, independiente de tu contraseña. No pegues esos valores en el chat.
-3. Configura `APP_ORIGIN` con el origen exacto de la tienda, sin barra final; por ejemplo `http://127.0.0.1:5174`. Reinicia Vite al cambiar variables.
+2. Configura `ADMIN_USER` y `ADMIN_PASSWORD` con el usuario y la clave que prefieras, sin longitud mínima obligatoria.
+3. La protección de sesión y la comprobación del dominio son automáticas.
 4. En tu proyecto nuevo de Supabase ejecuta `setup.sql`. Introduce `SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY` en `.env`, nunca en archivos de `src` ni variables `VITE_`.
 5. Ejecuta `npm run dev -- --port 5174 --strictPort` y abre `/admin`.
 
@@ -20,7 +20,7 @@ En Vercel estas variables van en la configuración del proyecto. El servidor usa
 - Eliminar producto solicita confirmación. La eliminación es permanente.
 - Quitar del producto retira la referencia al guardar. Los archivos anteriores se conservan para evitar borrar imágenes compartidas; no se muestra una herramienta de limpieza en el panel.
 - Ver tienda abre el catálogo público. Al recargar, lee los productos visibles de Supabase. Sin conexión configurada se conserva el catálogo demo local.
-- Cierra sesión al terminar. La sesión caduca a las ocho horas. Cambiar SESSION_SECRET invalida todas las sesiones.
+- Cierra sesión al terminar. La sesión caduca a las ocho horas. Cambiar las credenciales administrativas invalida las sesiones cuando se utiliza la configuración automática.
 
 La identidad comercial continúa en `src/store.config.ts`. No se ha añadido edición de esos datos desde el panel.
 
