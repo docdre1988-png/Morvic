@@ -1,0 +1,34 @@
+# Subir a Vercel
+
+1. En Vercel selecciona **Add New → Project** e importa `docdre1988-png/catalogo150` (rama `main`).
+2. Usa estos ajustes (el repositorio ya los declara):
+   - Framework: **Vite**.
+   - Root Directory: **./**.
+   - Build Command: **npm run build**.
+   - Output Directory: **dist**.
+   - Node.js: **22.x**.
+3. En **Environment Variables**, añade estas seis variables para **Production**. Copia los valores desde tu `.env` local:
+
+| Variable | Valor |
+| --- | --- |
+| `SUPABASE_URL` | URL del proyecto Supabase |
+| `SUPABASE_SERVICE_ROLE_KEY` | Clave secreta de Supabase |
+| `ADMIN_USER` | Usuario administrativo |
+| `ADMIN_PASSWORD` | Contraseña administrativa |
+| `SESSION_SECRET` | Clave técnica de sesión ya generada en `.env` |
+| `APP_ORIGIN` | `https://TU-PROYECTO.vercel.app` (sin barra al final) |
+
+4. Pulsa **Deploy**. Cuando Vercel muestre el dominio final, comprueba que `APP_ORIGIN` coincide exactamente. Si cambias alguna variable, ejecuta **Redeploy** para aplicarla.
+5. Abre la tienda y `/admin`. Inicia sesión, crea una categoría y un producto, sube una foto y comprueba el producto en la tienda. Prepara un pedido y revisa el mensaje de WhatsApp antes de enviarlo.
+
+El catálogo muestra los productos visibles de tu Supabase. Si la base está vacía, aparecerá el estado de catálogo vacío.
+
+## Notas prácticas
+
+- No añadas `VITE_` a las variables anteriores. Se utilizan exclusivamente en el servidor.
+- `.env` queda fuera de Git y de las subidas con la CLI. Las variables deben configurarse en Vercel.
+- `/api/admin` ejecuta la función del servidor; `/admin` abre el panel React.
+- Si el acceso indica “Origen no permitido”, corrige `APP_ORIGIN` para que coincida con el dominio que estás abriendo y vuelve a desplegar. Para probar, usa el dominio estable del proyecto.
+- Si agregas un dominio propio, actualiza `APP_ORIGIN` con ese dominio y redespliega.
+- Los cambios que subas a `main` podrán desplegarse automáticamente mediante la integración GitHub de Vercel.
+- Este proyecto está preparado para desplegar. La verificación en el dominio público se realiza después del primer despliegue.

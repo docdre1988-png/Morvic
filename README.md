@@ -7,7 +7,8 @@ Plantilla React + TypeScript + Vite. Instalación independiente por negocio, sin
 - 1 y 2: negocio e identidad aprobados (Nido Mini, ropa infantil, WhatsApp 51907279299).
 - 3: catálogo público, búsqueda, categorías, tallas, bolsa persistente y enlace de pedido por WhatsApp.
 - 4: panel `/admin`, sesión firmada HttpOnly de ocho horas, credenciales en servidor, CRUD y subida de imágenes. [Configuración y uso](docs/ADMINISTRACION.md).
-- Estructura Supabase preparada en `setup.sql` y variables en `.env.example`. Falta conectar un proyecto real y verificar las operaciones contra él; después seguir con despliegue y entrega.
+- Supabase conectado localmente: tablas y bucket comprobados, acceso administrativo verificado. CRUD completo y fotografías pendientes de comprobación en el dominio final.
+- Configuración de Vercel preparada. [Pasos para desplegar](docs/VERCEL.md).
 
 ## Ejecutar
 
