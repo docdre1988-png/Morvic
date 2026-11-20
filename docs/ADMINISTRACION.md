@@ -14,11 +14,11 @@ En Vercel estas variables van en la configuración del proyecto. El servidor usa
 
 - Crea primero las categorías. Una categoría con productos no se puede eliminar.
 - Crea una prenda, completa nombre, precio, categoría y tallas separadas por coma.
-- Sube imágenes JPG, PNG o WebP de hasta 2 MB y guarda el producto.
-- Usa Vista previa para revisar nombre, imagen, descripción y tallas antes de guardar.
+- Agrega fotos con Elegir una foto, Tomar foto (en celulares compatibles), o arrastrándolas al recuadro. Se reducen automáticamente antes de subirlas. Guarda el producto para publicarlas.
+- Elige el color en la paleta; su nombre y muestra se ven en la ficha pública. Usa Vista previa para revisar foto, descripción, color y tallas antes de guardar.
 - Desmarca Mostrar en catálogo para ocultar una prenda; desmarca Disponible para impedir que se agregue a la bolsa.
 - Eliminar producto solicita confirmación. La eliminación es permanente.
-- Quitar del producto retira la referencia al guardar. Los archivos anteriores se conservan para evitar borrar imágenes compartidas; su limpieza puede hacerse en Storage de Supabase después de comprobar que ya no se usan.
+- Quitar del producto retira la referencia al guardar. Los archivos anteriores se conservan para evitar borrar imágenes compartidas; no se muestra una herramienta de limpieza en el panel.
 - Ver tienda abre el catálogo público. Al recargar, lee los productos visibles de Supabase. Sin conexión configurada se conserva el catálogo demo local.
 - Cierra sesión al terminar. La sesión caduca a las ocho horas. Cambiar SESSION_SECRET invalida todas las sesiones.
 
