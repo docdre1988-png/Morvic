@@ -1,0 +1,42 @@
+.admin-shell {
+  --primary: #3d5147;
+  --accent: #a65f43;
+  --background: #fbf9f5;
+  width: min(1040px, calc(100% - 48px));
+  min-height: 100dvh;
+  padding-top: 30px;
+}
+.admin-header { padding-bottom: 24px; border-bottom: 1px solid #e3e6dc; }
+.admin-header .text-link { border: 1px solid #cbd2c3; padding: 9px 17px; border-radius: 7px; background: #fffdf8; }
+.admin-login {
+  width: min(100%, 460px);
+  margin: clamp(32px, 7vh, 80px) auto;
+  padding: clamp(24px, 4vw, 40px);
+  background: #fffefa;
+  border: 1px solid #e0e4d8;
+  border-radius: 18px;
+  box-shadow: 0 16px 54px #3047340c;
+  position: relative;
+  overflow: hidden;
+}
+.admin-login::before { content: ''; display: block; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: #8e9f81; }
+.admin-login > .eyebrow { color: #8c654a; font-size: .65rem; letter-spacing: 1.6px; }
+.admin-login h1 { font-size: clamp(1.9rem, 4vw, 2.35rem); letter-spacing: -1.3px; line-height: 1.16; margin: 20px 0 14px; }
+.admin-login > p { color: #6a7667; font-size: .95rem; margin-bottom: 28px; }
+.admin-login form { gap: 22px; }
+.admin-login label { color: #3d5147; font-size: .875rem; font-weight: 550; gap: 9px; }
+.admin-login input { min-height: 49px; padding: 12px 14px; background: #fff; border-color: #d4dacd; border-radius: 8px; font-size: 1rem; }
+.admin-login input:focus { outline: 2px solid #8e9f81; outline-offset: 2px; }
+.admin-login .button { min-height: 50px; border-radius: 8px; margin-top: 4px; font-size: .95rem; }
+.admin-login .primary { background: #3d5147; color: #fff; }
+.admin-login .primary:hover { background: #293d32; }
+.admin-login .primary:disabled { background: #667461; opacity: .65; }
+.admin-login .admin-error { color: #8b2f23; margin: 0 0 20px; }
+.admin-login .demo-inline { font-size: .8rem; color: #775a43; }
+.admin-shell .dialog { --primary: #3d5147; }
+@media(max-width:580px) {
+  .admin-shell { width: calc(100% - 32px); padding-top: 20px; }
+  .admin-header { padding-bottom: 18px; gap: 10px; }
+  .admin-header .text-link { font-size: .8rem; padding: 8px 12px; }
+  .admin-login { margin-block: 32px; border-radius: 13px; }
+}
