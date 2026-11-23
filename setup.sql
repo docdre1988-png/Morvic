@@ -1,4 +1,6 @@
--- Ejecutar en un proyecto nuevo. Cada negocio usa su propio proyecto.
+-- MORVIC SPORT: ejecutar solo en su proyecto Supabase nuevo.
+-- Crea catálogo, permisos y almacenamiento sin importar productos de otras tiendas.
+begin;
 create table public.categories (
  id uuid primary key default gen_random_uuid(), name text not null check(length(name) between 1 and 200),
  subtitle text not null default '', created_at timestamptz not null default now()
@@ -21,3 +23,10 @@ create policy "visible products" on public.products for select to anon, authenti
 insert into storage.buckets(id,name,public,file_size_limit,allowed_mime_types)
 values('products','products',true,2000000,array['image/jpeg','image/png','image/webp']);
 -- Bucket público para lectura. No crear políticas de escritura para anon/authenticated.
+
+-- Categorías iniciales. El catálogo queda sin productos hasta recibir las fotos reales.
+insert into public.categories (name, subtitle) values
+ ('Ropa deportiva', 'Para moverte a tu ritmo'),
+ ('Calzado', 'Tu siguiente paso'),
+ ('Accesorios', 'Completa tu equipo');
+commit;

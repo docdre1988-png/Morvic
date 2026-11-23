@@ -15,7 +15,7 @@ export function Icon({ name, size = 22 }: { name: 'bag' | 'search' | 'menu' | 'c
   return <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">{paths[name]}</svg>;
 }
 export function ProductImage({ src, alt, className }: { src: string; alt: string; className?: string }) {
-  return <img src={src} alt={alt} className={className} loading="lazy" decoding="async" onError={e => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/placeholder.svg'; }} />;
+  return <img src={src || '/images/placeholder.svg'} alt={alt} className={className} loading="lazy" decoding="async" onError={e => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/placeholder.svg'; }} />;
 }
 export function Dialog({ title, onClose, children, drawer = false }: { title: string; onClose: () => void; children: ReactNode; drawer?: boolean }) {
   const ref = useRef<HTMLDialogElement>(null);
